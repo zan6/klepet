@@ -158,6 +158,7 @@ function preveriEmoji(vhodnoBesedilo){
 }
 function preveriSlike(vhodnoBesedilo){
   return vhodnoBesedilo.replace(/(https?:\/\/[^\s]*\.(?:jpg|png|gif))/gi, '<img src="$1" width="200" style="padding-left: 20px;"/>');
+}
 function preveriVideoPosnetke(vhodnoBesedilo){
   var regex = /https:\/\/www\.youtube\.com\/watch\?v=([^\s]+)/gi;
    var html = '<iframe src="https://www.youtube.com/embed/$1" allowfullscreen width="200px" height="150px" style="margin-left: 20px;"></iframe>';
