@@ -2,13 +2,15 @@ function divElementEnostavniTekst(sporocilo) {
   
   var txt = preveriEmoji(sporocilo);
   txt = preveriSlike(txt);
-  
+   txt = preveriVideoPosnetke(txt);
+   
   if(txt != sporocilo){
     return $('<div style="font-weight: bold"></div>').html(txt);
   }else{{
     return $('<div style="font-weight: bold;"></div>').text(sporocilo);
     }
   }
+ 
 }
 
 function divElementHtmlTekst(sporocilo) {
@@ -148,4 +150,8 @@ function preveriEmoji(vhodnoBesedilo){
 }
 function preveriSlike(vhodnoBesedilo){
   return vhodnoBesedilo.replace(/(https?:\/\/[^\s]*\.(?:jpg|png|gif))/gi, '<img src="$1" width="200" style="padding-left: 20px;"/>');
+function preveriVideoPosnetke(vhodnoBesedilo){
+  var regex = /https:\/\/www\.youtube\.com\/watch\?v=([^\s]+)/gi;
+   var html = '<iframe src="https://www.youtube.com/embed/$1" allowfullscreen width="200px" height="150px" style="margin-left: 20px;"></iframe>';
+   return vhodnoBesedilo.replace(regex, html);
 }
