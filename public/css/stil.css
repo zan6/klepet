@@ -44,7 +44,7 @@ a {
   cursor: pointer;
 }
 
-#seznam-kanalov div:hover {
+#seznam-kanalov div:hover,#seznam-uporabnikov div:hover {
   background-color: #ddd;
 }
 
@@ -56,4 +56,7 @@ a {
 
 #pomoc {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+#seznam-uporabnikov{
+  cursor: pointer;
 }
